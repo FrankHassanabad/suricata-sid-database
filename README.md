@@ -4,11 +4,17 @@ Creates a Suricata JSON hash object from the references in your local Suricata r
 
 # How to use this DB
 
-Clone or download the contents of the JSON from [data/suricata-rules-ref.json](data/suricata-rules-ref.json)
+Install [jq](https://stedolan.github.io/jq/)
 
-Then install [jq](https://stedolan.github.io/jq/)
+Optionally, clone or download the contents of the JSON from [data/suricata-rules-ref.json](data/suricata-rules-ref.json)
 
-If you have a Suricata sid such as 2001219, run it against the JSON like so
+Then, if you have a Suricata sid such as `2001219`, run it against the JSON like so
+
+```sh
+curl https://raw.githubusercontent.com/FrankHassanabad/suricata-sid-database/master/data/suricata-rules-ref.json | jq '."2001219"'
+```
+
+or if you have data locally like this
 
 ```sh
 jq '."2001219"' data/suricata-rules-ref.json
