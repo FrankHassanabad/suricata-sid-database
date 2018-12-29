@@ -1,0 +1,30 @@
+{
+  "name": "suricata-sid-db",
+  "version": "1.0.0",
+  "description": "Extracts from a set of suricata rules the sid and refs into a JSON file",
+  "main": "src/builddb",
+  "scripts": {
+    "start": "npm run builddb",
+    "build": "tsc -p .",
+    "clean": "rimraf dest",
+    "lookupsid": "ts-node src/lookupsid",
+    "builddb": "ts-node src/builddb",
+    "lint": "tslint -c tslint.json src/**/*.{ts,spec.ts}"
+  },
+  "author": "Frank Hassanabad",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^6.2.1",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/inquirer": "0.0.43",
+    "@types/node": "^10.11.3",
+    "chai": "^4.2.0",
+    "prettier": "1.15.3",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.12.0"
+  }
+}
