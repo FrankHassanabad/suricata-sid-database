@@ -1,6 +1,9 @@
 # suricata-sid-database
 
-Creates a Suricata JSON hash object from the references in your local Suricata rules
+Creates a Suricata JSON hash object from the references in your local Suricata rules.
+You can use this repo or the curl/jq commands below to query and get
+additional information about Suricata sid's from alerts you might have by using the
+hyperlinks (references) from Suricata that this DB provides.
 
 # How to use this DB
 
