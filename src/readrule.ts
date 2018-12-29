@@ -37,13 +37,19 @@ export const readRule = (
     .readFileSync(ruleFile)
     .toString()
     .split('\n');
-
+  const filteredRules = rule.filter(
+    line => !line.startsWith('#') && line !== '',
+  );
   const initialValue: Record<string, string[]> = {};
-  const sidToRefs = rule.reduce((accum, line) => {
+  const sidToRefs = filteredRules.reduce((accum, line) => {
     const tokens = line.split(' ');
     const sid = getSidFromTokens(tokens);
-    const references = getReferencesFromTokens(tokens, reference);
-    accum[sid] = references;
+    if (sid !== '') {
+      const references = getReferencesFromTokens(tokens, reference);
+      if (references.length !== 0) {
+        accum[sid] = references;
+      }
+    }
     return accum;
   }, initialValue);
   return sidToRefs;

@@ -11,10 +11,7 @@ const RULES_DIR = '/usr/local/etc/suricata/rules';
 const refMap = referenceConf(REFERENCE_CONF);
 
 readDir(RULES_DIR)
-  .then(items => {
-    const rulesOnly = items.filter(item => item.endsWith('.rules'));
-    return rulesOnly;
-  })
+  .then(items => items.filter(item => item.endsWith('.rules')))
   .then(rulesFiltered => {
     const initalValue: Record<string, string[]> = {};
     const allRules = rulesFiltered.reduce((accum, rule) => {
