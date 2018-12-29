@@ -17,13 +17,13 @@ Then, if you have a Suricata sid such as `2001219`, run it against the JSON like
 curl https://raw.githubusercontent.com/FrankHassanabad/suricata-sid-database/master/data/suricata-rules-ref.json | jq '."2001219"'
 ```
 
-or if you have data locally like this
+or if you have the json downloaded locally, it would be like this
 
 ```sh
 jq '."2001219"' data/suricata-rules-ref.json
 ```
 
-And your response should be several hyper links like so:
+Your response should be several hyper links like this:
 
 ```ts
 [
