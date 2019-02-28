@@ -1,2 +1,2 @@
-import * as db from '../data/suricata-rules-ref.json';
+import * as db from './suricata-rules-ref.json';
 export { db };

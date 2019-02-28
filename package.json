@@ -3,7 +3,7 @@
   "homepage": "https://github.com/FrankHassanabad/suricata-sid-database",
   "version": "1.0.1",
   "description": "Extracts from a set of suricata rules the sid and refs into a JSON file",
-  "main": "dest/src/index.js",
+  "main": "dest/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/FrankHassanabad/suricata-sid-database.git"
@@ -11,8 +11,8 @@
   "scripts": {
     "start": "npm run builddb",
     "sample": "ts-node src/sample",
-    "build": "tsc -p . && cp src/typings.d.ts dest/src && cp -R data dest",
-    "clean": "rimraf dest",
+    "build": "tsc -p . && cp src/typings.d.ts dest && cp data/suricata-rules-ref.json dest",
+    "clean": "rimraf dist",
     "builddb": "ts-node src/builddb",
     "lint": "tslint -c tslint.json src/**/*.{ts,spec.ts}"
   },
