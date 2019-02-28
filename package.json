@@ -1,7 +1,7 @@
 {
   "name": "suricata-sid-db",
   "homepage": "https://github.com/FrankHassanabad/suricata-sid-database",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Extracts from a set of suricata rules the sid and refs into a JSON file",
   "main": "dest/index.js",
   "repository": {
